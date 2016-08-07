@@ -1,0 +1,2431 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Getting git to work with a proxy server - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Getting git to work with a proxy server">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="How do I get git to use a proxy server?
+
+I need to check out code from a git server, it shows &quot;Request timed out&quot; every time. How do I get around this? 
+
+Alternatively, how can I set a proxy server?">
+    <meta property="og:url" content="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server">
+    <link rel="canonical" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server">
+
+    
+    
+    <script type="text/javascript" async="" src="./Getting git to work with a proxy server - Stack Overflow_files/ados"></script><script async="" src="./Getting git to work with a proxy server - Stack Overflow_files/quant.js"></script><script async="" src="./Getting git to work with a proxy server - Stack Overflow_files/beacon.js"></script><script async="" src="./Getting git to work with a proxy server - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./Getting git to work with a proxy server - Stack Overflow_files/ados.js"></script><script src="./Getting git to work with a proxy server - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./Getting git to work with a proxy server - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Getting git to work with a proxy server - Stack Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Getting git to work with a proxy server&#39;" href="http://stackoverflow.com/feeds/question/783811">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:4,shownCommentCount:4,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:783811});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '783811');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1470583901,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"067cf359f0b2bf1b861fbf6ece61d786","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableNewLinkInsertDialog":true},"tags":{},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"04c10a670987","js/moderator.en.js":"4c6b90e021fb","js/full-anon.en.js":"1f597b6461cb","js/full.en.js":"df4d39b7144e","js/wmd.en.js":"72c8adfde4ba","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"c1d4db704271","js/help.en.js":"677da064451a","js/tageditor.en.js":"390d598d51b3","js/tageditornew.en.js":"c033f17a50a0","js/inline-tag-editing.en.js":"a815357d00cd","js/revisions.en.js":"47de10a8358f","js/review.en.js":"ec06b54df6dc","js/tagsuggestions.en.js":"78eee7c19ab2","js/post-validation.en.js":"9bf262e5e155","js/explore-qlist.en.js":"d33e3ab2f2e0","js/events.en.js":"3a3b267416bc","js/keyboard-shortcuts.en.js":"66874008d08e","js/external-editor.en.js":"7e4776eedc29","js/external-editor.en.js":"7e4776eedc29","js/snippet-javascript.en.js":"a33071d20297","js/snippet-javascript-codemirror.en.js":"f9b3619c4a6c"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="./Getting git to work with a proxy server - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./Getting git to work with a proxy server - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./Getting git to work with a proxy server - Stack Overflow_files/post-validation.en.js"></script><script type="text/javascript" src="./Getting git to work with a proxy server - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="./Getting git to work with a proxy server - Stack Overflow_files/adFeedback.css"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+        </ul>
+    </div>
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f783811%2fgetting-git-to-work-with-a-proxy-server" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f783811%2fgetting-git-to-work-with-a-proxy-server" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+                <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 158 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f783811%2fgetting-git-to-work-with-a-proxy-server" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f783811%2fgetting-git-to-work-with-a-proxy-server" class="login-link">log in</a>
+
+                            <a href="http://stackoverflow.com/tour">tour</a>
+        <a href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab">Jobs</a></li>
+                                                <li><a id="nav-docs" href="http://stackoverflow.com/documentation">Documentation</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+<div class="hero-box docs-announcement">
+    <div class="hero-close js-dismiss">Dismiss</div>
+    
+    
+    <div class="hero-content text-left">
+        <div class="text-wrapper">
+            <div class="hero-title">
+                Announcing Stack Overflow Documentation
+            </div>
+
+            <p class="subtitle">
+                We started with Q&amp;A. Technical documentation is next, and we need your help.
+            </p>
+            <p class="subtitle">
+                Whether you're a beginner or an experienced developer, you <i>can</i> contribute.
+            </p>
+        </div>
+
+            <a href="http://stackoverflow.com/users/signup?ssrc=docs_hero&amp;returnurl=%2Ftour%2Fdocumentation" class="btn js-gps-track" data-gps-track="docs.hero.clicked({target: 2 })">
+                Sign up and start helping →
+            </a>
+            <a href="http://stackoverflow.com/tour/documentation" class="btn-clear js-gps-track" data-gps-track="docs.hero.clicked({target: 1 })">
+                Learn more about Documentation →
+            </a>
+
+        <div class="img"></div>
+    </div>
+</div>
+
+<script>
+    StackExchange.ready(function() {
+        var location = 0;
+        if ($("body").hasClass("question-page")) {
+            location = 2;
+        } else if ($("body").hasClass("home-page")) {
+            location = 1;
+        }
+
+        $(".docs-announcement .js-dismiss").one("click", function() {
+            $(".docs-announcement").fadeOut("fast");
+            $.post("/dismiss-documentation-hero", { fkey: StackExchange.options.user.fkey, location: location });
+        });
+
+        StackExchange.using("gps", function () {
+            StackExchange.gps.track("docs.hero.show", { location: location }, true);
+        });
+    });
+</script>			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server" class="question-hyperlink">Getting git to work with a proxy server</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="783811" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk512180207",4).setZone(43); });
+            </script>
+                <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="783811">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">429</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#">favorite</a>
+        <div class="favoritecount"><b>239</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>How do I get git to use a proxy server?</p>
+
+<p>I need to check out code from a git server, it shows "Request timed out" every time. How do I get around this? </p>
+
+<p>Alternatively, how can I set a proxy server?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/git" class="post-tag js-gps-track" title="show questions tagged &#39;git&#39;" rel="tag">git</a> <a href="http://stackoverflow.com/questions/tagged/proxy" class="post-tag js-gps-track" title="show questions tagged &#39;proxy&#39;" rel="tag">proxy</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/783811" title="short permalink to this question" class="short-link" id="link-post-783811">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/783811/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/783811/revisions" title="show all edits to this post">edited <span title="2010-07-01 19:43:33Z" class="relativetime">Jul 1 '10 at 19:43</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2009-04-23 22:32:53Z" class="relativetime">Apr 23 '09 at 22:32</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2288585/plaguehammer"><div class="gravatar-wrapper-32"><img src="./Getting git to work with a proxy server - Stack Overflow_files/10227e415d1c4e4e1cc719c6ccd70934" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2288585/plaguehammer">PlagueHammer</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 16,086" dir="ltr">16.1k</span><span title="22 gold badges"><span class="badge1"></span><span class="badgecount">22</span></span><span title="66 silver badges"><span class="badge2"></span><span class="badgecount">66</span></span><span title="83 bronze badges"><span class="badge3"></span><span class="badgecount">83</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-783811" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-594415" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Wouldn't this be a git client configuration item? The only aspect of this that seems like would involve cmd.exe is that the git client may allow you to specify a proxy in an environement variable.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/12711/michael-burr" title="236,186 reputation" class="comment-user">Michael Burr</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment594415_783811"><span title="2009-04-23 22:42:29Z" class="relativetime-clean">Apr 23 '09 at 22:42</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-3250802" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I have edited the original question to remove all Windows references, as this problem is git-specific per se.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2288585/plaguehammer" title="16,086 reputation" class="comment-user owner">PlagueHammer</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment3250802_783811"><span title="2010-07-01 19:44:28Z" class="relativetime-clean">Jul 1 '10 at 19:44</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-27571843" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Note that you will be able toon to <a href="http://stackoverflow.com/a/18712501/6309">setup a proxy per git repo url!</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/6309/vonc" title="608,723 reputation" class="comment-user">VonC</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment27571843_783811"><span title="2013-09-10 07:01:53Z" class="relativetime-clean">Sep 10 '13 at 7:01</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-50700420" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This question is very similar to "<a href="http://stackoverflow.com/questions/128035/how-do-i-pull-from-a-git-repository-through-an-http-proxy">How do I pull from a Git repository through an HTTP proxy?"</a>.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/107158/derek-mahar" title="11,326 reputation" class="comment-user">Derek Mahar</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment50700420_783811"><span title="2015-07-11 17:07:44Z" class="relativetime-clean">Jul 11 '15 at 17:07</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-783811" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								8 Answers
+                                <span style="display:none;" itemprop="answerCount">8</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="19213999"></a>
+<div id="answer-19213999" class="answer accepted-answer" data-answerid="19213999" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="19213999">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">719</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="The question owner accepted this as the best answer Oct 7 &#39;13 at 20:16.">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Command to use:</p>
+
+<pre><code>git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080
+</code></pre>
+
+<ul>
+<li>change <code>proxyuser</code> to your proxy user</li>
+<li>change <code>proxypwd</code> to your proxy password</li>
+<li>change <code>proxy.server.com</code> to the URL of your proxy server</li>
+<li>change <code>8080</code> to the proxy port configured on your proxy server</li>
+</ul>
+
+<p>If you decide at any time to reset this proxy and work without proxy:</p>
+
+<p>Command to use:</p>
+
+<pre><code>git config --global --unset http.proxy
+</code></pre>
+
+<p>Finally, to check the currently set proxy:</p>
+
+<pre><code>git config --global --get http.proxy
+</code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/19213999" title="short permalink to this answer" class="short-link" id="link-post-19213999">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/19213999/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/19213999/revisions" title="show all edits to this post">edited <span title="2016-06-20 15:13:32Z" class="relativetime">Jun 20 at 15:13</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1557027/markus-k%c3%b6hler"><div class="gravatar-wrapper-32"><img src="./Getting git to work with a proxy server - Stack Overflow_files/d4eaf56ceafbbca9317faf9af4b24581" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1557027/markus-k%c3%b6hler">Markus Köhler</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">77</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="13 bronze badges"><span class="badge3"></span><span class="badgecount">13</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-10-06 21:10:25Z" class="relativetime">Oct 6 '13 at 21:10</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2678170/salim-hamidi"><div class="gravatar-wrapper-32"><img src="./Getting git to work with a proxy server - Stack Overflow_files/z9dE2.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2678170/salim-hamidi">Salim Hamidi</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">7,567</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="12 bronze badges"><span class="badge3"></span><span class="badgecount">12</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-19213999" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="13" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-32386570" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">4</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thanks Salim. Mine worked without the proxyuser:proxypwd in the URL.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/705902/kwex" title="1,865 reputation" class="comment-user">Kwex</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment32386570_19213999"><span title="2014-01-30 15:45:33Z" class="relativetime-clean">Jan 30 '14 at 15:45</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-32534412" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="warm">7</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thanks,guys. For me it was NTLM based authentication and just updating my .gitconfig didn't work :( . So I had to get CNTLM which uses NTLM authetication. All I had to do was point my CNTLM to my network's proxy server and then point my software update manager(like yum,apt-get or ssh) to the local proxy. In case of git operations like clone,pull the http.proxy was my locally configured proxy with the local server.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1360878/mayur-nagekar" title="611 reputation" class="comment-user">Mayur Nagekar</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment32534412_19213999"><span title="2014-02-04 05:02:30Z" class="relativetime-clean">Feb 4 '14 at 5:02</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-45315176" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">4</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Hello, how can I set proxypass if it have "@" character? I know I must scape this character but I don't know how.. Thank you</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1910553/patrick" title="464 reputation" class="comment-user">patricK</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment45315176_19213999"><span title="2015-02-13 10:52:46Z" class="relativetime-clean">Feb 13 '15 at 10:52</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-49338887" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">4</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@patricK You can use <code>%40</code> as a replacement for the <code>@</code> in username/ password string, though I've not tested this myself.  Hope it helps. :-)</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2173917/sourav-ghosh" title="65,852 reputation" class="comment-user">Sourav Ghosh</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment49338887_19213999"><span title="2015-06-04 07:00:41Z" class="relativetime-clean">Jun 4 '15 at 7:00</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-50592058" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="warm">6</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@patricK I can confirm that using %40 as a replacement for @ works. It seems if a special character isn't working you should try URL encoding it. The encodings are found here: <a href="http://www.w3schools.com/tags/ref_urlencode.asp" rel="nofollow">w3schools.com/tags/ref_urlencode.asp</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/397010/jon" title="884 reputation" class="comment-user">Jon</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment50592058_19213999"><span title="2015-07-08 18:36:51Z" class="relativetime-clean">Jul 8 '15 at 18:36</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-19213999" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" onclick="">show <b>13</b> more comments</a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk220167316",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk220167316"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo0MDQyODMsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNDM0MzA2LCJkaSI6Ijk4ZTUyZTk1MTQzYjQ3ZjQ4NGI0MTBjMmU2ODcwYTU3IiwiZG0iOjEsImZjIjoxNjQ5MzA2LCJmbCI6MTQ0ODM0MiwiaXAiOiIxNzIuMTYuMTYuMjIxIiwia3ciOiJnaXQscHJveHkiLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjE2MDQsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby5pbi8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtY2MwODQ0ZmJmMzA0NDFjNzkxNzQ3ZWVmODQwMGM0YWUiLCJ6biI6NDQsInRzIjoxNDcwNTgzOTA5MDU3LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsyMjAxNjczMTYiLCJ1ciI6Imh0dHA6Ly9zdGFja292ZXJmbG93LmNvbS9qb2JzL3JlbW90ZT9tZWQ9enJrJnJlZj1jYW5kaWRhdGVzLXdmaF9sYi13Zmgta2lkLXdvcmstb24td29yayJ9&amp;s=Oo3K0gWCn8JCe6sqS1W9k_A-Jak" rel="nofollow" target="_blank" title=""><img src="./Getting git to work with a proxy server - Stack Overflow_files/1a2d5e390ec74bb39389d3d434084be0.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./Getting git to work with a proxy server - Stack Overflow_files/i.gif"></div>
+  
+<a name="8248484"></a>
+<div id="answer-8248484" class="answer" data-answerid="8248484" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="8248484">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">103</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>This worked for me, in windows XP behind a corporate firewall.</p>
+
+<p>I didnt have to install any local proxy or any other software besides git v1.771  from <a href="http://code.google.com/p/msysgit/downloads/list?can=3">http://code.google.com/p/msysgit/downloads/list?can=3</a></p>
+
+<pre><code>$ git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080
+$ git config --system http.sslcainfo /bin/curl-ca-bundle.crt
+$ git remote add origin https://mygithubuser:mygithubpwd@github.com/repoUser/repoName.git
+$ git push origin master
+</code></pre>
+
+<p><strong>proxyuser</strong>= the proxy user I was assigned by our IT dept, in my case it is the same windows user I use to log in to my PC, the Active Directory user</p>
+
+<p><strong>proxypwd</strong>= the password of my proxy user</p>
+
+<p><strong>proxy.server.com:8080</strong> = the proxy name and port, I got it from Control Panel, Internet Options, Connections, Lan Settings button, Advanced button inside the Proxy Server section, use the servername and port on the first (http) row.</p>
+
+<p><strong>mygithubuser</strong> = the user I use to log in to github.com</p>
+
+<p><strong>mygithubpwd</strong> = the password for my github.com user</p>
+
+<p><strong>repoUser</strong> = the user owner of the repo</p>
+
+<p><strong>repoName</strong> = the name of the repo</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/8248484" title="short permalink to this answer" class="short-link" id="link-post-8248484">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/8248484/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/8248484/revisions" title="show all edits to this post">edited <span title="2013-12-31 14:00:54Z" class="relativetime">Dec 31 '13 at 14:00</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-11-23 20:14:38Z" class="relativetime">Nov 23 '11 at 20:14</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/697785/alvaro"><div class="gravatar-wrapper-32"><img src="./Getting git to work with a proxy server - Stack Overflow_files/4d5a3444c456b5ba5d505067631fd847" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/697785/alvaro">alvaro</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,538</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="12 bronze badges"><span class="badge3"></span><span class="badgecount">12</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8248484" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="8" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-13925655" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Hooray, thanks! <code>git config --global http.sslcainfo MY_NEW_CERTS_BUNDLE.crt</code> plus certificates downloaded as described in <a href="http://www.simplicidade.org/notes/archives/2011/06/github_ssl_ca_errors.html" rel="nofollow">simplicidade.org/notes/archives/2011/06/…</a> (thanks to: <a href="http://stackoverflow.com/a/7206627/98528">stackoverflow.com/a/7206627/98528</a>) did it for me!</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/98528/akavel" title="2,531 reputation" class="comment-user">akavel</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment13925655_8248484"><span title="2012-05-23 14:31:00Z" class="relativetime-clean">May 23 '12 at 14:31</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-17966842" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Seems to work for me, but git still doesn't work when I ask it to clone a repository using the <code>git://</code> protocol.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1157054/ajedi32" title="14,222 reputation" class="comment-user">Ajedi32</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment17966842_8248484"><span title="2012-11-02 15:03:27Z" class="relativetime-clean">Nov 2 '12 at 15:03</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-19812078" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">A couple of clarifications to pablolic's information, based on what worked for me: 1) If proxyuser is a Windows login, leave out the AD domain, just include the user name without the domain; 2) Spaces in the proxypwd should be encoded as "+".  eg "My Password" should be entered as "My+Password".</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/216440/simon-tewsi" title="5,218 reputation" class="comment-user">Simon Tewsi</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment19812078_8248484"><span title="2013-01-11 03:48:26Z" class="relativetime-clean">Jan 11 '13 at 3:48</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-23482287" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@EdmundYeung99: I'd suggest replacing the @ symbol with %40.  Haven't tried it but I believe that is standard URL encoding.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/216440/simon-tewsi" title="5,218 reputation" class="comment-user">Simon Tewsi</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment23482287_8248484"><span title="2013-05-05 12:03:01Z" class="relativetime-clean">May 5 '13 at 12:03</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-24484303" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@demongolem: I suspect you may need to URL encode your password (haven't tried it, this is just an educated guess).  See UrlEncoded column in the table in the following answer: <a href="http://stackoverflow.com/a/11236038/216440">stackoverflow.com/a/11236038/216440</a>  In your case that would mean replacing the $ with %24.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/216440/simon-tewsi" title="5,218 reputation" class="comment-user">Simon Tewsi</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment24484303_8248484"><span title="2013-06-06 06:23:44Z" class="relativetime-clean">Jun 6 '13 at 6:23</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-8248484" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" onclick="">show <b>8</b> more comments</a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="3161122"></a>
+<div id="answer-3161122" class="answer" data-answerid="3161122" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="3161122">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">31</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Set a system variable named <code>http_proxy</code> with the value of <code>ProxyServer:Port</code>.
+That is the simplest solution.</p>
+
+<p>Setting gitproxy (as sleske mentions) is another option, but that requires a "command", which is not as straightforward as the above solution.</p>
+
+<p>References:
+<a href="http://bardofschool.blogspot.com/2008/11/use-git-behind-proxy.html" rel="nofollow">http://bardofschool.blogspot.com/2008/11/use-git-behind-proxy.html</a></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/3161122" title="short permalink to this answer" class="short-link" id="link-post-3161122">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3161122/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/3161122/revisions" title="show all edits to this post">edited <span title="2016-07-27 08:02:26Z" class="relativetime">Jul 27 at 8:02</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/27385/atc"><div class="gravatar-wrapper-32"><img src="./Getting git to work with a proxy server - Stack Overflow_files/8ad2304dd68978c01b9bf45daa6d9fe4" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/27385/atc">atc</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">3,122</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="24 silver badges"><span class="badge2"></span><span class="badgecount">24</span></span><span title="46 bronze badges"><span class="badge3"></span><span class="badgecount">46</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature owner">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-07-01 19:42:18Z" class="relativetime">Jul 1 '10 at 19:42</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2288585/plaguehammer"><div class="gravatar-wrapper-32"><img src="./Getting git to work with a proxy server - Stack Overflow_files/10227e415d1c4e4e1cc719c6ccd70934" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2288585/plaguehammer">PlagueHammer</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 16,086" dir="ltr">16.1k</span><span title="22 gold badges"><span class="badge1"></span><span class="badgecount">22</span></span><span title="66 silver badges"><span class="badge2"></span><span class="badgecount">66</span></span><span title="83 bronze badges"><span class="badge3"></span><span class="badgecount">83</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3161122" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-10367216" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="warm">7</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Or use 'https_proxy' if you're connecting to a https-repository.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/49769/daefu" title="353 reputation" class="comment-user">daefu</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment10367216_3161122"><span title="2011-12-06 07:39:47Z" class="relativetime-clean">Dec 6 '11 at 7:39</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-19811981" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@daefu: Not sure if you need to set https_proxy.  I'm connected to an https repository and followed the first step of pablolic's instructions (ie adding http.proxy to the git config file).  That was all it took for me.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/216440/simon-tewsi" title="5,218 reputation" class="comment-user">Simon Tewsi</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment19811981_3161122"><span title="2013-01-11 03:41:07Z" class="relativetime-clean">Jan 11 '13 at 3:41</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-20966192" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">https_proxy was required for me. Setting only http_proxy did not allow it to clone an HTTPS repo</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/151212/explunit" title="12,933 reputation" class="comment-user">explunit</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment20966192_3161122"><span title="2013-02-18 15:17:51Z" class="relativetime-clean">Feb 18 '13 at 15:17</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-23221939" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@daefu +1 this also works with widows github - related question : <a href="http://stackoverflow.com/questions/16216176/git-for-windows-unable-to-clone-repository" title="git for windows unable to clone repository">stackoverflow.com/questions/16216176/…</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/470184/blue-sky" title="12,359 reputation" class="comment-user">blue-sky</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment23221939_3161122"><span title="2013-04-26 10:16:21Z" class="relativetime-clean">Apr 26 '13 at 10:16</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-58482000" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@SimonTewsi @explunit While setting environment variables <code>http_proxy</code> is required for HTTP URLs and <code>https_proxy</code> is required for HTTPS URLs. Alternatively, one could just set <code>all_proxy</code> for all URLs. See <code>ENVIRONMENT</code> section in <a href="https://curl.haxx.se/docs/manpage.html" rel="nofollow">curl(1)</a>. However, while setting git-config options, <code>http.proxy</code> is used for both HTTP and HTTPS URLs. See <code>http.proxy</code> in <a href="https://www.kernel.org/pub/software/scm/git/docs/git-config.html" rel="nofollow">git-config(1)</a>.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/303363/susam-pal" title="10,409 reputation" class="comment-user">Susam Pal</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment58482000_3161122"><span title="2016-02-14 06:23:04Z" class="relativetime-clean">Feb 14 at 6:23</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-3161122" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="10754341"></a>
+<div id="answer-10754341" class="answer" data-answerid="10754341" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="10754341">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">22</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>If the command line way of configuring your proxy server doesn't work,
+you can probably just edit .gitconfig (in the root of your profile, which may hide both in C:\Documents and Settings and on some network drive) and add this:</p>
+
+<pre><code>[http]
+    proxy = http://username:password@proxy.at.your.org:8080
+</code></pre>
+
+<p>YMMV though, this only covers the first step of the command line configuration. You may have to edit the system git configuration too and I have no idea where they hid that.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/10754341" title="short permalink to this answer" class="short-link" id="link-post-10754341">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/10754341/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/10754341/revisions" title="show all edits to this post">edited <span title="2013-03-08 13:39:51Z" class="relativetime">Mar 8 '13 at 13:39</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/32043/guerda"><div class="gravatar-wrapper-32"><img src="./Getting git to work with a proxy server - Stack Overflow_files/3df83952dc426143757b8891f68bfbfc" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/32043/guerda">guerda</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">9,825</span><span title="20 gold badges"><span class="badge1"></span><span class="badgecount">20</span></span><span title="70 silver badges"><span class="badge2"></span><span class="badgecount">70</span></span><span title="125 bronze badges"><span class="badge3"></span><span class="badgecount">125</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-05-25 12:21:12Z" class="relativetime">May 25 '12 at 12:21</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/36574/randakar"><div class="gravatar-wrapper-32"><img src="./Getting git to work with a proxy server - Stack Overflow_files/01184b4e565eaff775a420124414e2b6" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/36574/randakar">Randakar</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">311</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="7 bronze badges"><span class="badge3"></span><span class="badgecount">7</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-10754341" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-17299684" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">"You may have to edit the system git configuration too". No, usually not. The system and user config are combined; setting the proxy in one of the two should be enough.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/43681/sleske" title="43,437 reputation" class="comment-user">sleske</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment17299684_10754341"><span title="2012-10-09 07:28:43Z" class="relativetime-clean">Oct 9 '12 at 7:28</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-28327217" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">In my case it's located on my Windows machine in [git home]\etc\gitconfig - after editing it works like a charm!</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/472270/barmaley" title="10,042 reputation" class="comment-user">barmaley</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment28327217_10754341"><span title="2013-10-03 04:28:14Z" class="relativetime-clean">Oct 3 '13 at 4:28</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-10754341" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="21136254"></a>
+<div id="answer-21136254" class="answer" data-answerid="21136254" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="21136254">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">15</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>If you are using ubuntu, then do the following ...</p>
+
+<p>Step 1 : Install corkscrew</p>
+
+<pre><code>$ sudo apt-get install corkscrew
+</code></pre>
+
+<p>Step 2 : Write a script named git-proxy.sh and add the following</p>
+
+<pre><code>#!/bin/sh
+
+exec corkscrew &lt;name of proxy server&gt; &lt;port&gt; $*
+
+# &lt;name_of_proxy_server&gt; and &lt;port&gt; are the ip address and port of the server
+# e.g. exec corkscrew 192.168.0.1 808 $*
+</code></pre>
+
+<p>Step 3 : Make the script executable</p>
+
+<pre><code>$ chmod +x git-proxy.sh
+</code></pre>
+
+<p>Step 4 : Set up the proxy command for GIT by setting the environment variable</p>
+
+<pre><code>$ export GIT_PROXY_COMMAND="/&lt;path&gt;/git-proxy.sh"
+</code></pre>
+
+<p>Now use the git commands,such as</p>
+
+<pre><code>git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+</code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/21136254" title="short permalink to this answer" class="short-link" id="link-post-21136254">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/21136254/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-01-15 11:30:09Z" class="relativetime">Jan 15 '14 at 11:30</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3197840/sk-hasanujjaman"><div class="gravatar-wrapper-32"><img src="./Getting git to work with a proxy server - Stack Overflow_files/9034e2b93c12487686e95a628094f24f" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3197840/sk-hasanujjaman">Sk Hasanujjaman</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">151</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-21136254" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-35088881" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">thx! That works for me.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1082697/newptone" title="2,411 reputation" class="comment-user">NewPtone</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment35088881_21136254"><span title="2014-04-10 03:33:24Z" class="relativetime-clean">Apr 10 '14 at 3:33</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-21136254" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="33072773"></a>
+<div id="answer-33072773" class="answer" data-answerid="33072773" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="33072773">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>For the git protocol (git://...), install socat and write a script such as:</p>
+
+<pre><code>#!/bin/sh
+
+exec socat - socks4:your.company.com:$1:$2
+</code></pre>
+
+<p>make it executable, put it in your path, and in your <code>~/.gitconfig</code> set <code>core.gitproxy</code> to the name of that script.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/33072773" title="short permalink to this answer" class="short-link" id="link-post-33072773">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/33072773/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/33072773/revisions" title="show all edits to this post">edited <span title="2015-10-12 03:25:47Z" class="relativetime">Oct 12 '15 at 3:25</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-10-12 03:20:21Z" class="relativetime">Oct 12 '15 at 3:20</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3424428/ashutosh"><div class="gravatar-wrapper-32"><img src="./Getting git to work with a proxy server - Stack Overflow_files/6ecc1438b5c605744acea879915cc04f" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3424428/ashutosh">ashutosh</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">71</span><span title="3 bronze badges"><span class="badge3"></span><span class="badgecount">3</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-33072773" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-61402173" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Works for windows with cygwin's SOCAT too. using <code>socat STDIO PROXY:%proxy%:%1:%2,proxyport=%PROXYPORT%</code></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/4777/davenpcj" title="5,262 reputation" class="comment-user">davenpcj</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment61402173_33072773"><span title="2016-04-28 16:20:38Z" class="relativetime-clean">Apr 28 at 16:20</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-61402253" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Can use <code>set GIT_PROXY_COMMAND=path\to\script</code> to make GIT use the proxy without messing with git config.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/4777/davenpcj" title="5,262 reputation" class="comment-user">davenpcj</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment61402253_33072773"><span title="2016-04-28 16:22:47Z" class="relativetime-clean">Apr 28 at 16:22</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-33072773" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="23277446"></a>
+<div id="answer-23277446" class="answer" data-answerid="23277446" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="23277446">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p><strong>I work on Windows XP at work(state/gov), so I did my research and found this <a href="http://kaamka.blogspot.com/2009/06/httpproxy-environment-variable.html" rel="nofollow">here</a> and it worked for me. Hope this helps :)</strong></p>
+
+<p><strong><em>The http_proxy Environment Variable</em></strong></p>
+
+<p>If you use a proxy server or firewall, you may need to set the http_proxy environment variable in order to access some url from commandline.
+Example : Installing ppm for perl or applying rpm in linux ,updating ubuntu</p>
+
+<p>Set the http_proxy variable with the hostname or IP address of the proxy server:
+http_proxy=http:// [proxy.example.org]</p>
+
+<p>If the proxy server requires a user name and password, include them in the following form:
+http_proxy=http:// [username:password@proxy.example.org]</p>
+
+<p>If the proxy server uses a port other than 80, include the port number:
+http_proxy=http:// [username:password@proxy.example.org:8080]</p>
+
+<p><strong>Windows XP</strong></p>
+
+<blockquote>
+  <ol>
+  <li>Open the Control Panel and click the System icon.</li>
+  <li>On the Advanced tab, click on Environment Variables.</li>
+  <li>Click New in the System variables panel.</li>
+  <li>Add http_proxy with the appropriate proxy information (see examples above).</li>
+  </ol>
+</blockquote>
+
+<p><strong>Linux, Solaris or HP-UX</strong></p>
+
+<p>Set the http_proxy environment variable using the command specific to your shell (e.g. set or export). To make this change persistent, add the command to the appropriate profile file for the shell. For example, in bash, add a line like the following to your .bash_profile or .bashrc file:</p>
+
+<blockquote>
+  <ol>
+  <li>http_proxy=http:// [username:password@hostname:port];</li>
+  <li>export $http_proxy</li>
+  </ol>
+</blockquote>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/23277446" title="short permalink to this answer" class="short-link" id="link-post-23277446">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/23277446/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-04-24 18:54:10Z" class="relativetime">Apr 24 '14 at 18:54</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2544826/shak-daniel"><div class="gravatar-wrapper-32"><img src="./Getting git to work with a proxy server - Stack Overflow_files/picture" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2544826/shak-daniel">Shak Daniel</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">87</span><span title="9 bronze badges"><span class="badge3"></span><span class="badgecount">9</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-23277446" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-41666836" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Wish I found your answer sooner, but it was the solution I used, even on Windows 7.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/537407/shousper" title="710 reputation" class="comment-user">shousper</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#comment41666836_23277446"><span title="2014-10-22 23:12:13Z" class="relativetime-clean">Oct 22 '14 at 23:12</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-23277446" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="36469929"></a>
+<div id="answer-36469929" class="answer" data-answerid="36469929" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="36469929">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>For windows users: if <code>git config</code> or <code>set http_proxy=</code> doesn't work, <a href="http://stackoverflow.com/a/36469864/1150303">this answer</a> may help:</p>
+
+<p>replace the <code>git://</code> protocol of the git repository with <code>http://</code>. Note, you'll have to set the <code>http_proxy</code> first, anyways.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/36469929" title="short permalink to this answer" class="short-link" id="link-post-36469929">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/36469929/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-04-07 07:52:13Z" class="relativetime">Apr 7 at 7:52</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1150303/domtomcat"><div class="gravatar-wrapper-32"><img src="./Getting git to work with a proxy server - Stack Overflow_files/675c7070033721308d1513f991193ae2" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1150303/domtomcat">DomTomCat</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,796</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="28 bronze badges"><span class="badge3"></span><span class="badgecount">28</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-36469929" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-36469929" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+				    <div class="question-status">
+        <h2>                    <b>protected</b> by <a href="http://stackoverflow.com/users/-1/community">Community</a><span class="mod-flair" title="moderator">♦</span> <span dir="ltr"><span title="2015-03-14 13:49:50Z" class="relativetime">Mar 14 '15 at 13:49</span></span>
+</h2>
+        <p>
+Thank you for your interest in this question. 
+Because it has attracted low-quality or spam answers that had to be removed, posting an answer now requires 10 <a href="http://stackoverflow.com/help/whats-reputation">reputation</a> on this site (the <a href="http://stackoverflow.com/help/privileges/new-user">association bonus does not count</a>).
+<br><br>
+Would you like to answer one of these <a href="http://stackoverflow.com/unanswered?fromProtectedNotice=true">unanswered questions</a> instead?
+</p>
+    </div>
+
+
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/git" class="post-tag" title="show questions tagged &#39;git&#39;" rel="tag">git</a> <a href="http://stackoverflow.com/questions/tagged/proxy" class="post-tag" title="show questions tagged &#39;proxy&#39;" rel="tag">proxy</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2009-04-23 22:32:53Z"><b>7 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>421995 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server?lastactivity" class="lastactivity-link" title="2016-07-27 08:02:26Z">11 days ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk202396040",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk202396040"><div id="careersadsdoublehigh" style="display:none;"></div><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./Getting git to work with a proxy server - Stack Overflow_files/i(1).gif"></div>
+            <div id="hireme"></div>
+        <script>
+;"use strict";var _typeof=typeof Symbol=="function"&&typeof Symbol.iterator=="symbol"?function(n){return typeof n}:function(n){return n&&typeof Symbol=="function"&&n.constructor===Symbol?"symbol":typeof n};(function(n){try{var t=function(){var r,t,i;if(typeof[].indexOf!="function")return{v:void 0};if(r=["stackoverflow.com","serverfault.com","careers.stackoverflow.com","blog.codinghorror.com","joelonsoftware.com","www.joelonsoftware.com"],r[0]!=="*"&&r.indexOf(location.hostname)===-1)return{v:void 0};t=window;t.clc_opts=n;n.autoload&&(t.clc_init=t.clc_init||[],t.clc_init.push(function(){return t.clc.load()}));i=document.createElement("script");i.async=!0;i.src=n.lib;document.body.appendChild(i)}();if((typeof t=="undefined"?"undefined":_typeof(t))==="object")return t.v}catch(i){}}).call(null, {"az":true,"kt":2000,"tto":true,"autoload":true,"d":{"sb":["hireme","clc-sb"],"tlb":["careers1","clc-tlb"],"mlb":["careers3","clc-mlb"]},"allowed":["stackoverflow.com","serverfault.com","careers.stackoverflow.com","blog.codinghorror.com","joelonsoftware.com","www.joelonsoftware.com"],"h":"clc.stackoverflow.com","u":"//clc.stackoverflow.com/p.js","lib":"//cdn.sstatic.net/clc/clc.min.js?v=84432a71b7a2"});        </script>
+			
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/31662955?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/31662955/git-clone-no-address-associated-with-name?noredirect=1&amp;lq=1" class="question-hyperlink">git clone : no address associated with name</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/128035?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted large">340</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/128035/how-do-i-pull-from-a-git-repository-through-an-http-proxy?noredirect=1&amp;lq=1" class="question-hyperlink">How do I pull from a Git repository through an HTTP proxy?</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/575440?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted large">195</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/575440/url-encoding-using-c-sharp?noredirect=1&amp;lq=1" class="question-hyperlink">URL Encoding using C#</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/10274879?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">33</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/10274879/how-to-contribute-on-github-anonymously-via-tor?noredirect=1&amp;lq=1" class="question-hyperlink">How to contribute on github anonymously via Tor?</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/16067534?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">18</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/16067534/only-use-a-proxy-for-certain-git-urls-domains?noredirect=1&amp;lq=1" class="question-hyperlink">Only use a proxy for certain git urls/domains?</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/5529218?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">22</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/5529218/how-to-use-git-behind-a-proxy?noredirect=1&amp;lq=1" class="question-hyperlink">How to use git behind a proxy</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/27279359?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">15</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/27279359/how-to-make-git-work-to-push-commits-to-github-via-tor?noredirect=1&amp;lq=1" class="question-hyperlink">How to make git work to push commits to GitHub via tor?</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/22799825?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">8</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/22799825/using-git-on-windows-behind-an-http-proxy-without-storing-proxy-password-on-di?noredirect=1&amp;lq=1" class="question-hyperlink">Using Git on Windows, behind an HTTP proxy, without storing proxy password on disk</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/9736325?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">6</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/9736325/git-connection-time-out-trying-to-clone-via-proxy?noredirect=1&amp;lq=1" class="question-hyperlink">Git connection time out trying to clone via proxy</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/27434341?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">4</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/27434341/repository-test-is-failed-when-i-clone-git-repository-in-android-studio-on-windo?noredirect=1&amp;lq=1" class="question-hyperlink">Repository test is failed when I clone git repository in Android Studio on Windows</a>
+</div>					<div class="spacer more">
+				<a href="http://stackoverflow.com/questions/linked/783811?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/52704?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">2469</div></a><a href="http://stackoverflow.com/questions/52704/how-do-you-discard-unstaged-changes-in-git?rq=1" class="question-hyperlink">How do you discard unstaged changes in Git?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/128035?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">340</div></a><a href="http://stackoverflow.com/questions/128035/how-do-i-pull-from-a-git-repository-through-an-http-proxy?rq=1" class="question-hyperlink">How do I pull from a Git repository through an HTTP proxy?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/179123?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">7688</div></a><a href="http://stackoverflow.com/questions/179123/edit-an-incorrect-commit-message-in-git?rq=1" class="question-hyperlink">Edit an incorrect commit message in Git</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/278192?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1723</div></a><a href="http://stackoverflow.com/questions/278192/view-the-change-history-of-a-file-using-git-versioning?rq=1" class="question-hyperlink">View the change history of a file using Git versioning</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/292357?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">6459</div></a><a href="http://stackoverflow.com/questions/292357/what-are-the-differences-between-git-pull-and-git-fetch?rq=1" class="question-hyperlink">What are the differences between 'git pull' and 'git fetch'?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/348170?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">4967</div></a><a href="http://stackoverflow.com/questions/348170/how-to-undo-git-add-before-commit?rq=1" class="question-hyperlink">How to undo 'git add' before commit?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/927358?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">11192</div></a><a href="http://stackoverflow.com/questions/927358/how-to-undo-last-commits-in-git?rq=1" class="question-hyperlink">How to undo last commit(s) in Git?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/1125968?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">3003</div></a><a href="http://stackoverflow.com/questions/1125968/how-to-force-git-pull-to-overwrite-local-files?rq=1" class="question-hyperlink">How to force “git pull” to overwrite local files?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/2003505?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">8087</div></a><a href="http://stackoverflow.com/questions/2003505/how-to-delete-a-git-branch-both-locally-and-remotely?rq=1" class="question-hyperlink">How to delete a Git branch both locally and remotely?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/6591213?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">4067</div></a><a href="http://stackoverflow.com/questions/6591213/how-to-rename-a-local-git-branch?rq=1" class="question-hyperlink">How to rename a local Git branch?</a></div>
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/40213/side-length-of-square-inside-a-triangle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Side length of square inside a triangle
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/273032/what-exactly-is-a-photon" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What exactly is a photon?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/251007/what-will-happen-when-the-current-is-too-high-for-a-switch" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What will happen when the current is too high for a switch?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/340757/what-is-the-verb-for-criticizing-someone-especially-juniors-in-an-annoying-way" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the verb for criticizing someone (especially juniors) in an annoying way?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/88653/print-a-10-by-10-grid-of-asterisks" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Print a 10 by 10 grid of asterisks
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/74847/breaking-figure-order-by-referencing-a-figure-in-a-later-section" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Breaking figure order by referencing a figure in a later section
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/88981/can-you-outgolf-me-robbers-section" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can you outgolf me? (Robbers section)
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="http://mathoverflow.net/questions/247006/infinite-grassmannian-does-not-have-the-homotopy-type-of-a-finite-dimensional-co" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Infinite Grassmannian does not have the homotopy type of a finite-dimensional complex
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-android" title="Android Enthusiasts Stack Exchange"></div><a href="http://android.stackexchange.com/questions/154184/why-does-google-play-say-app-is-incompatible" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:139 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does Google Play say app is "incompatible"
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange"></div><a href="http://chemistry.stackexchange.com/questions/57067/water-and-olive-oil-intereactions" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Water and olive oil intereactions
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/30516/why-was-the-production-of-the-lockheed-sr-71-blackbird-halted" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why was the production of the Lockheed SR-71 Blackbird halted?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/809146/how-to-rm-or-mv-a-range-of-files-such-as-file01-txt-file02-txt-file85-txt" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to 'rm' or 'mv' a range of files such as file01.txt, file02.txt...file85.txt
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/72626/is-it-rude-to-correct-a-non-native-english-speaker" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it rude to correct a non-native English speaker?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/131638/how-can-rfid-nfc-tags-not-be-cloned-when-they-are-passive-technology" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can RFID/NFC tags not be cloned when they are passive technology?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/38813167/how-can-i-stream-a-mapstring-listobject-into-a-entrystring-object" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I stream a Map&lt;String, List&lt;Object&gt;&gt; into a &lt;Entry&lt;String, Object&gt;&gt;?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="http://diy.stackexchange.com/questions/96914/do-you-really-need-a-pee-trap-on-bathroom-sinks" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do you really need a pee-trap on bathroom sinks?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="http://history.stackexchange.com/questions/31153/did-bill-gates-steal-the-gui-concept-from-steve-jobs" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Did Bill Gates steal the GUI concept from Steve Jobs?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/323701/counter-value-is-accessed-incorrectly-in-custom-command-beamer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Counter value is accessed incorrectly in custom command (Beamer)
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/341280/what-is-a-verb-that-means-to-be-said-by-a-computer-machine" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is a verb that means "to be said by a computer/machine"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/38813847/need-help-understanding-function-invocation-in-javascript" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Need help understanding function invocation in Javascript
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/123342/can-one-reorder-a-list-for-parameterization" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can one reorder a list for parameterization?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/74807/will-i-look-bad-if-im-never-in-my-office-as-a-graduate-student" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Will I look bad if I'm never in my office as a graduate student?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/133025/copying-the-email-address-to-a-forgotten-password-page" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Copying the email address to a forgotten password page
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/137990/read-file-with-over-300k-words-and-filter-through-appropriate-filter-to-return-l" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Read file with over 300k words and filter through appropriate filter to return list of matching words
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/783811" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/783811/ivc/35c1');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/783811/ivc/35c1" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang"></div></div>
+
+
+        </div>
+    </div><script async="" src="./Getting git to work with a proxy server - Stack Overflow_files/clc.min.js"></script>
+    <div id="footer" class="categories">
+        <div class="footerwrap">            
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.8.5.3867
+            </div>
+                </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('git,proxy');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            
+            ga('create', 'UA-5620270-1');
+            ga('set', 'dimension2', '|git|proxy|');             ga('send', 'pageview');
+        
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+<img src="./Getting git to work with a proxy server - Stack Overflow_files/to.gif" style="display: none;"></body></html>
